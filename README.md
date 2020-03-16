@@ -72,12 +72,12 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
+Created Digital Wireframe
 
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
+<img src="http://g.recordit.co/Ckza9qRaAG.gif" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
