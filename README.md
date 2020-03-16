@@ -1,4 +1,4 @@
-Group Project - README Template
+Event Planner
 ===
 
 # Eventer
@@ -75,6 +75,9 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 Created Digital Wireframe
 
 ### [BONUS] Digital Wireframes & Mockups
+<img width="525" alt="part1" src="https://user-images.githubusercontent.com/32022063/76722490-c676c980-6711-11ea-9fc7-4e899c945cb5.png">
+<img width="520" alt="part2" src="https://user-images.githubusercontent.com/32022063/76722496-cbd41400-6711-11ea-8a45-781b2cf4d48e.png">
+
 
 ### [BONUS] Interactive Prototype
 <img src="http://g.recordit.co/Ckza9qRaAG.gif" width=300>
