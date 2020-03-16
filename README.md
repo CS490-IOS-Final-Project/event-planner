@@ -77,7 +77,7 @@ Created Digital Wireframe
 ### [BONUS] Digital Wireframes & Mockups
 
 ### [BONUS] Interactive Prototype
-<img src="http://g.recordit.co/Ckza9qRaAG.gif" width=600>
+<img src="http://g.recordit.co/Ckza9qRaAG.gif" width=300>
 
 ## Schema 
 [This section will be completed in Unit 9]
