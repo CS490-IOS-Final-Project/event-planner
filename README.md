@@ -85,8 +85,61 @@ Created Digital Wireframe
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+#### User
+
+   | Property      | Type                | Description                   |
+   | ------------- | --------            | ------------                  |
+   | userId        | String              | Unique identification of user |
+   | password      | base64              | Encrypted Password of user    |
+   | firstName     | String              | First name of user            |
+   | lastName      | String              | Last name of user             |
+   | emailAddress  | String              | Email address of user         |
+ 
+#### Location
+
+   | Property      | Type             | Description                |
+   | ------------- | --------         | ------------               |
+   | locationName  | String           | Name of location           |
+   | streetAddress | String           | Street address of location |
+   | city          | String           | City of location           |
+   | state         | String           | State of location          |
+   | zipcode       | Number           | Zipcode of location        |
+   | country       | String           | Country of location        |
+   | roomNumber    | String           | Room number of location    |
+   
+#### Event
+
+   | Property      | Type           | Description                        |
+   | ------------- | --------       | ------------                       |
+   | eventName     | String         | Name of the event                  |
+   | location      | Location       | Location of the event              |
+   | time          | DateTime       | Time of the event                  |
+   | description   | String         | Description of the event           |
+   | organizer     | User           | User who organized event           |
+   | rsvpList      | List\[User\]   | List of people who RSVP'd to event |
+
+
 ### Networking
+#### List of network requests by screen
+   - All Events Screen
+      - (Read/GET) Get all events
+   - View Event Details Screen
+      - (Read/GET) View specific event
+   - Create Event Screen
+      - (Create/POST) Create a new post object
+   - Signup/Login Screen
+      - (Create/POST) Create a new user
+      - (Read/GET) Sign into app with user
+   - Location Search Screen
+      - (Read/GET) Search events by location
+   - My Events Screen
+      - (Read/GET) View events user organized
+   - My RSVP'd Events Screen
+      - (Read/GET) View events user RSVP'd to
+   - Edit My Event Screen
+      - (Update/PUT) Modify event details
+      
+      
 - Get user details (authorization)
 - save user details (signup)
 - View all events user has RSVPd for
