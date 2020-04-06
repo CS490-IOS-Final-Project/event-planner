@@ -1,0 +1,6 @@
+framework module Pods_Event_Planner_Event_PlannerUITests {
+  umbrella header "Pods-Event-Planner-Event-PlannerUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
