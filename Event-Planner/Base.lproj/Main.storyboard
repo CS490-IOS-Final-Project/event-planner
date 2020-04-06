@@ -15,23 +15,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event +" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-Ab-akH">
-                                <rect key="frame" x="75" y="172" width="264" height="159"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event +" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Npz-Ab-akH">
+                                <rect key="frame" x="101.5" y="224" width="211" height="68.5"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="59"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SRu-kp-SFf" customClass="GIDSignInButton">
-                                <rect key="frame" x="46" y="422" width="322" height="76"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRu-kp-SFf" customClass="GIDSignInButton">
+                                <rect key="frame" x="46" y="474" width="322" height="76"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="obN-2a-TFW"/>
+                                </constraints>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="valueChanged" id="CHa-c5-oPk"/>
                                 </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SRu-kp-SFf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="46" id="5IU-Hp-SUM"/>
+                            <constraint firstItem="Npz-Ab-akH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yq-k4-hrB"/>
+                            <constraint firstItem="Npz-Ab-akH" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="180" id="aij-Fq-eFu"/>
+                            <constraint firstItem="SRu-kp-SFf" firstAttribute="top" secondItem="Npz-Ab-akH" secondAttribute="bottom" constant="181.5" id="bFh-Bs-Wt2"/>
+                            <constraint firstItem="SRu-kp-SFf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wR7-bG-pcA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SRu-kp-SFf" secondAttribute="trailing" constant="46" id="xlk-1C-pJw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -52,7 +61,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="127" id="J5i-a2-pTb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomepageCell" rowHeight="127" id="J5i-a2-pTb">
                                 <rect key="frame" x="0.0" y="28" width="414" height="127"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J5i-a2-pTb" id="bny-AM-xAg">

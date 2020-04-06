@@ -31,11 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
           }
           // User is signed in
           // ...
+            GIDSignIn.sharedInstance()?.presentingViewController.performSegue(withIdentifier: "loginToHome", sender: nil)
         }
+        return
     }
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // When user logs out
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Error Signing out")
+        }
+        
+        GIDSignIn.sharedInstance()?.presentingViewController.dismiss(animated: true, completion: nil)
     }
     
 
