@@ -140,7 +140,9 @@ Created Digital Wireframe
       - (Update/PUT) Modify event details
       
       
+## Sprint 1      
 - Get user details (authorization)
 - save user details (signup)
-- View all events user has RSVPd for
-- View all events available (and optionally by location)
+
+<img src="http://g.recordit.co/NyXWYPYURW.gif" width=300>
+
