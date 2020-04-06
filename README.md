@@ -27,8 +27,8 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 
 **Required Must-have Stories**
 
-* User has ability to signups
-* User should be able to sign-in.
+* ~~User has ability to signups~~
+* ~~User should be able to sign-in~~
 * A user should have ability to create an event
 * A user should have ability to view all events
 * A user should have ability to view events by location
