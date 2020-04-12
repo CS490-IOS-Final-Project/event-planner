@@ -27,8 +27,8 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 
 **Required Must-have Stories**
 
-* User has ability to signups
-* User should be able to sign-in.
+* ~~User has ability to signups~~
+* ~~User should be able to sign-in~~
 * A user should have ability to create an event
 * A user should have ability to view all events
 * A user should have ability to view events by location
@@ -140,7 +140,9 @@ Created Digital Wireframe
       - (Update/PUT) Modify event details
       
       
+## Sprint 1      
 - Get user details (authorization)
 - save user details (signup)
-- View all events user has RSVPd for
-- View all events available (and optionally by location)
+
+<img src="http://g.recordit.co/NyXWYPYURW.gif" width=300>
+
