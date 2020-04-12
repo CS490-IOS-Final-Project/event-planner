@@ -1,20 +1,17 @@
 //
-//  HomeTableViewController.swift
+//  LocationTableViewController.swift
 //  Event-Planner
 //
-//  Created by Aditya Subramaniam on 4/5/20.
+//  Created by Aditya Subramaniam on 4/11/20.
 //  Copyright © 2020 cs490group. All rights reserved.
 //
 
 import UIKit
-import Firebase
-import GoogleSignIn
 
-class HomeTableViewController: UITableViewController {
+class LocationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,7 +19,6 @@ class HomeTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
 
     // MARK: - Table view data source
 
@@ -36,11 +32,6 @@ class HomeTableViewController: UITableViewController {
         return 0
     }
 
-    @IBAction func onLogout(_ sender: Any) {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
-        GIDSignIn.sharedInstance()?.disconnect()
-    }
-    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

@@ -13,7 +13,7 @@ import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        // When users log in
+        // When users log in. Runs authentication through firebase
         if let error = error {
             print("Error in Sign In: \(error)")
             return
@@ -31,22 +31,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
           }
           // User is signed in
           // ...
-            GIDSignIn.sharedInstance()?.presentingViewController.performSegue(withIdentifier: "loginToHome", sender: nil)
+          // GIDSignIn.sharedinstance() is session instance
+          // Access user through Auth.auth().currentUser ...
+          GIDSignIn.sharedInstance()?.presentingViewController.performSegue(withIdentifier: "loginToHome", sender: nil)
         }
         return
     }
-    
-    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
-        // When user logs out
-        do {
-            try Auth.auth().signOut()
-        } catch {
-            print("Error Signing out")
-        }
-        
-        GIDSignIn.sharedInstance()?.presentingViewController.dismiss(animated: true, completion: nil)
-    }
-    
 
 
 

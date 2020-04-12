@@ -17,12 +17,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Set sharedInstance's view controller to LoginViewController
         GIDSignIn.sharedInstance()?.presentingViewController = self
+        
+        // Restore session if user left app without signing out
         GIDSignIn.sharedInstance()?.restorePreviousSignIn()
     }
     
     @IBAction func onLogin(_ sender: Any) {
         // Do any additional setup after loading the view.
+        
+        // Call's sign function in AppDelegate to login through google
         GIDSignIn.sharedInstance().signIn()
     }
     
