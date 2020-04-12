@@ -9,8 +9,28 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import GooglePlaces
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, GMSAutocompleteViewControllerDelegate {
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+      print("Place name: \(place.name)")
+      print("Place ID: \(place.placeID)")
+      print("Place attributions: \(place.attributions)")
+      locationText.text = place.formattedAddress
+        placeId = place.placeID ?? ""
+      dismiss(animated: true, completion: nil)
+    }
+
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+      // TODO: handle the error.
+      print("Error: ", error.localizedDescription)
+    }
+
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+      dismiss(animated: true, completion: nil)
+    }
+    
 
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var locationText: UITextField!
@@ -18,6 +38,7 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var descriptionText: UITextField!
     
     var ref: DatabaseReference!
+    var placeId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,11 +70,29 @@ class CreateEventViewController: UIViewController {
         
         let strDate = dateFormatter.string(from: dateAndTime.date)
         
-        self.ref.child("Events").setValue(["Event Host": Auth.auth().currentUser?.uid,"Event Name": eventName.text!, "Location": locationText.text!, "Date and Time": strDate])
-         
+        self.ref.child("Events").childByAutoId().setValue(["EventHost": Auth.auth().currentUser?.uid,"EventName": eventName.text!, "Location": locationText.text!, "LocationID": placeId, "DateTime": strDate])
         
+        _ = navigationController?.popViewController(animated: true)
+         
     }
     
+    @IBAction func addLocation(_ sender: Any) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
+          UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.formattedAddress.rawValue))!
+        autocompleteController.placeFields = fields
+
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .address
+        autocompleteController.autocompleteFilter = filter
+
+        // Display the autocomplete view controller.
+        present(autocompleteController, animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

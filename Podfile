@@ -10,6 +10,7 @@ target 'Event-Planner' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'GoogleSignIn'
+  pod 'GooglePlaces'
 
   target 'Event-PlannerTests' do
     inherit! :search_paths
