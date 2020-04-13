@@ -31,7 +31,7 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 * ~~User should be able to sign-in~~
 * ~~A user should have ability to create an event~~
 * ~~A user should have ability to view all events~~
-* A user should have ability to view events by location
+* ~~A user should be able navigate to different screens~~
 * A user can RSVP to an event
 * A user, who is also the host of the event, can edit the event
 * A user can view all events you have RSVPd to
@@ -145,4 +145,11 @@ Created Digital Wireframe
 - save user details (signup)
 
 <img src="http://g.recordit.co/NyXWYPYURW.gif" width=300>
+
+## Sprint 2
+- A user should have ability to create an event
+- A user should have ability to view all events
+- A user should be able navigate to different screens
+
+[]! (s2gif.gif)
 
