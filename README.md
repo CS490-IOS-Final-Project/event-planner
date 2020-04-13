@@ -151,5 +151,5 @@ Created Digital Wireframe
 - A user should have ability to view all events
 - A user should be able navigate to different screens
 
-[]! (s2gif.gif)
+![](s2gif.gif)
 
