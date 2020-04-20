@@ -32,8 +32,8 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 * ~~A user should have ability to create an event~~
 * ~~A user should have ability to view all events~~
 * ~~A user should be able navigate to different screens~~
-* A user can RSVP to an event
-* A user, who is also the host of the event, can edit the event
+* ~~A user can RSVP to an event~~
+* ~~A user can view events by location~~
 * A user can view all events you have RSVPd to
 * A user should be notified before the event
 
@@ -152,4 +152,11 @@ Created Digital Wireframe
 - A user should be able navigate to different screens
 
 ![](s2gif.gif)
+
+## Sprint 3
+- A user should have the ability to RSVP to an event
+- A user should have the ability to view a page of an event's details
+- A user should have the ability to search for events within 10 KM radius of a specified location
+
+<img src="http://g.recordit.co/yk3bpO1roC.gif" width=300>
 
