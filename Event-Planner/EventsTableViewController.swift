@@ -17,14 +17,16 @@ class Event {
     var eventHostEmail: String?
     var eventName: String?
     var location: String?
+    var locationId: String?
     var attendeeCount: UInt?
     
-    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, attendeeCount: UInt?) {
+    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?) {
         self.dateTime = dateTime
         self.eventHostName = eventHostName
         self.eventHostEmail = eventHostEmail
         self.eventName = eventName
         self.location = location
+        self.locationId = locationId
         self.ref = ref
         self.attendeeCount = attendeeCount
     }
@@ -36,7 +38,8 @@ class Event {
             let eventHostName = value["EventHostName"] as? String,
             let eventHostEmail = value["EventHostEmail"] as? String,
             let eventName = value["EventName"] as? String,
-            let location = value["Location"] as? String
+            let location = value["Location"] as? String,
+            let locationId = value["LocationID"] as? String
         else {
             return nil
         }
@@ -47,6 +50,7 @@ class Event {
         self.eventHostEmail = eventHostEmail
         self.eventName = eventName
         self.location = location
+        self.locationId = locationId
                 
         self.ref?.child("Rsvp").observeSingleEvent(of: .value, with: { (snapshot) in
             self.attendeeCount = snapshot.childrenCount
@@ -79,7 +83,6 @@ class EventsTableViewController: UITableViewController {
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot,
                     let newEvent = Event(snapshot: snapshot) {
-                    print(newEvent)
                     newEvents.append(newEvent)
                 }
             }
@@ -93,12 +96,6 @@ class EventsTableViewController: UITableViewController {
     
 
     // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 1
-//    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return myEvents.count

@@ -93,9 +93,8 @@ class CreateEventViewController: UIViewController, GMSAutocompleteViewController
     */
     
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        
       locationText.text = place.formattedAddress
-      placeId = place.placeID
+      self.placeId = place.placeID
       dismiss(animated: true, completion: nil)
     }
 
