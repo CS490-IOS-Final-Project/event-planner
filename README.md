@@ -153,3 +153,10 @@ Created Digital Wireframe
 
 ![](s2gif.gif)
 
+## Sprint 3
+- A user should have the ability to RSVP to an event
+- A user should have the ability to view a page of an event's details
+- A user should have the ability to search for events within 10 mile radius of a specified location
+
+<img src="http://g.recordit.co/yk3bpO1roC.gif" width=300>
+
