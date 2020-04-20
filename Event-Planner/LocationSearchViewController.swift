@@ -16,7 +16,10 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
     @IBOutlet weak var tabView: UITableView!
     var placeCoordinate: CLLocation!
     var events = [Event]()
+    var radius: Double! = 10.0
     var ref: DatabaseReference!
+    @IBOutlet weak var radiusLabel: UILabel!
+    @IBOutlet weak var radiusSlidebar: UISlider!
     
     
     override func viewDidLoad() {
@@ -28,13 +31,18 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
         updateTableView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateTableView()
+    }
+    
     func updateTableView() {
         if (placeCoordinate == nil) {
             return
         }
         
         let allEvents = self.ref.child("Events")
-        allEvents.queryOrdered(byChild: "EventName").observe(.value, with: {snapshot in
+        allEvents.queryOrdered(byChild: "EventName").observeSingleEvent(of: .value, with: {snapshot in
             self.events.removeAll(keepingCapacity: true)
             self.tabView.reloadData()
             for child in snapshot.children {
@@ -47,9 +55,9 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
                         let dest = CLLocation(latitude: destCoord!.latitude, longitude: destCoord!.longitude)
                         
                         // Only add event if within 15000 meters ~ 10 miles
-                        if (dest.distance(from: self.placeCoordinate) < 15000) {
+                        if (dest.distance(from: self.placeCoordinate) <= self.milesToKm(miles: self.radius)) {
                             self.events.append(event)
-                            self.tabView.reloadData()
+                            self.tabView.insertRows(at: [IndexPath(row: self.events.count - 1, section: 0)], with: .automatic)
                         }
                     }
                 }
@@ -59,7 +67,9 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
         })
     }
 
-    
+    func milesToKm(miles: Double) -> Double {
+        return miles * 1609.34
+    }
     
     @IBAction func searchPressed(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -77,6 +87,14 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
         // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
     }
+    
+    
+    @IBAction func radiusChanged(_ sender: Any) {
+        self.radiusLabel.text = "\(Int(self.radiusSlidebar.value)) mi"
+        self.radius = Double(self.radiusSlidebar.value)
+        updateTableView()
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         self.events.count

@@ -19,6 +19,8 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventNumAttendeesLabel: UILabel!
     @IBOutlet weak var rsvpButton: UIButton!
     var currentUserId: String!
+    var currentUserEmail: String!
+    var currentUsername: String!
     var event: Event!
     var ref: DatabaseReference!
     
@@ -37,6 +39,8 @@ class EventDetailsViewController: UIViewController {
         self.eventNumAttendeesLabel.text = "\(event.attendeeCount ?? 0)"
         
         self.currentUserId = Auth.auth().currentUser?.uid
+        self.currentUsername = Auth.auth().currentUser?.displayName
+        self.currentUserEmail = Auth.auth().currentUser?.email
         
         
         self.ref.child("Users").child(self.currentUserId).child("Rsvp").child((event.ref?.key)!).observeSingleEvent(of: .value) { (snapshot) in
@@ -59,7 +63,7 @@ class EventDetailsViewController: UIViewController {
                 let eventId = self.event.ref!.key!
                 
                 // Add user RSVP to Event's info
-                self.ref.child("Events").child(eventId).child("Rsvp").child(self.currentUserId).setValue("")
+                self.ref.child("Events").child(eventId).child("Rsvp").child(self.currentUserId).setValue("\(self.currentUsername ?? "") \(self.currentUserEmail ?? "")")
                 
                 // Add event RSVP to User's info
                 self.ref.child("Users").child(self.currentUserId).child("Rsvp").child(eventId).setValue("")

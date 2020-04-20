@@ -818,7 +818,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OoD-fO-lQ8">
-                                <rect key="frame" x="0.0" y="138" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="183" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="Lo6-dM-NTP" customClass="EventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
@@ -893,28 +893,63 @@
                                     <outlet property="delegate" destination="7CR-1J-rKs" id="xQg-ky-Nse"/>
                                 </connections>
                             </tableView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="10" minValue="0.0" maxValue="50" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ke-DS-vfd">
+                                <rect key="frame" x="141" y="146" width="255" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="YHe-Ba-vAl"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="radiusChanged:" destination="7CR-1J-rKs" eventType="valueChanged" id="ep5-WM-T61"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wgj-eJ-8Wp">
+                                <rect key="frame" x="20" y="150" width="57" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdy-qv-qoY">
+                                <rect key="frame" x="82" y="150" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="PZa-WU-Eh1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Lhf-1j-Kg6" firstAttribute="trailing" secondItem="5Ke-DS-vfd" secondAttribute="trailing" constant="20" id="5tq-DG-2e4"/>
                             <constraint firstItem="PjD-ZR-qUv" firstAttribute="trailing" secondItem="Lhf-1j-Kg6" secondAttribute="trailing" id="8Ca-cz-4y4"/>
+                            <constraint firstItem="Fdy-qv-qoY" firstAttribute="leading" secondItem="Wgj-eJ-8Wp" secondAttribute="trailing" constant="5" id="8zj-GY-gm9"/>
                             <constraint firstItem="PjD-ZR-qUv" firstAttribute="top" secondItem="Lhf-1j-Kg6" secondAttribute="top" id="NCN-DF-XdO"/>
+                            <constraint firstItem="Wgj-eJ-8Wp" firstAttribute="leading" secondItem="Lhf-1j-Kg6" secondAttribute="leading" constant="20" id="NIp-Ya-3EK"/>
+                            <constraint firstItem="OoD-fO-lQ8" firstAttribute="top" secondItem="5Ke-DS-vfd" secondAttribute="bottom" constant="8" id="alY-wd-EdX"/>
                             <constraint firstItem="OoD-fO-lQ8" firstAttribute="leading" secondItem="Lhf-1j-Kg6" secondAttribute="leading" id="egg-WW-vS1"/>
+                            <constraint firstItem="Fdy-qv-qoY" firstAttribute="top" secondItem="PjD-ZR-qUv" secondAttribute="bottom" constant="12" id="nLr-s3-hUN"/>
                             <constraint firstItem="OoD-fO-lQ8" firstAttribute="trailing" secondItem="Lhf-1j-Kg6" secondAttribute="trailing" id="ntz-rq-w9l"/>
                             <constraint firstAttribute="bottom" secondItem="OoD-fO-lQ8" secondAttribute="bottom" id="psV-Du-XQf"/>
+                            <constraint firstItem="Wgj-eJ-8Wp" firstAttribute="top" secondItem="PjD-ZR-qUv" secondAttribute="bottom" constant="12" id="pst-UA-EPB"/>
+                            <constraint firstItem="5Ke-DS-vfd" firstAttribute="leading" secondItem="Fdy-qv-qoY" secondAttribute="trailing" constant="17" id="rZu-aW-6tR"/>
                             <constraint firstItem="PjD-ZR-qUv" firstAttribute="leading" secondItem="Lhf-1j-Kg6" secondAttribute="leading" id="rvM-p4-y8W"/>
-                            <constraint firstItem="OoD-fO-lQ8" firstAttribute="top" secondItem="PjD-ZR-qUv" secondAttribute="bottom" id="st1-C1-et1"/>
+                            <constraint firstItem="OoD-fO-lQ8" firstAttribute="top" secondItem="Wgj-eJ-8Wp" secondAttribute="bottom" constant="12" id="vrV-TM-esM"/>
+                            <constraint firstItem="OoD-fO-lQ8" firstAttribute="top" secondItem="Fdy-qv-qoY" secondAttribute="bottom" constant="12" id="yO1-WN-gjZ"/>
+                            <constraint firstItem="5Ke-DS-vfd" firstAttribute="top" secondItem="PjD-ZR-qUv" secondAttribute="bottom" constant="8" id="zUy-v7-DwN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Lhf-1j-Kg6"/>
                     </view>
                     <navigationItem key="navigationItem" id="RVN-QE-0gX"/>
                     <connections>
                         <outlet property="locationSearchbar" destination="DuW-uy-Vwv" id="rJR-eI-wLP"/>
+                        <outlet property="radiusLabel" destination="Fdy-qv-qoY" id="mDX-Ei-8aS"/>
+                        <outlet property="radiusSlidebar" destination="5Ke-DS-vfd" id="njB-JI-JiG"/>
                         <outlet property="tabView" destination="OoD-fO-lQ8" id="kD4-GQ-fng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EfA-Dq-2x7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2871" y="-74"/>
+            <point key="canvasLocation" x="2869.5652173913045" y="-74.330357142857139"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="k5W-Lq-Skc">
