@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import FirebaseDatabase
 import GooglePlaces
 
 class CreateEventViewController: UIViewController, GMSAutocompleteViewControllerDelegate {
@@ -27,6 +26,7 @@ class CreateEventViewController: UIViewController, GMSAutocompleteViewController
         ref = Database.database().reference()
         locationText.isUserInteractionEnabled = false
     }
+    
     
     @IBAction func createEvent(_ sender: Any) {
         if (eventName.text == nil || eventName.text!.isEmpty) {
@@ -50,8 +50,15 @@ class CreateEventViewController: UIViewController, GMSAutocompleteViewController
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let strDate = dateFormatter.string(from: dateAndTime.date)
+        let userName = Auth.auth().currentUser?.displayName ?? ""
+        let userEmail = Auth.auth().currentUser?.email ?? ""
+        let userId = Auth.auth().currentUser?.uid ?? ""
         
-        self.ref.child("Events").childByAutoId().setValue(["EventHost": Auth.auth().currentUser?.uid,"EventName": eventName.text!, "Location": locationText.text!, "LocationID": placeId, "DateTime": strDate])
+        let newEvent = self.ref.child("Events").childByAutoId()
+        newEvent.setValue(["EventHostName": userName, "EventHostEmail": userEmail,"EventName": eventName.text!, "Location": locationText.text!, "LocationID": placeId!, "DateTime": strDate])
+        
+        self.ref.child("Users").child(userId).child("Hosted").child(newEvent.key!).setValue("")
+        
         
         navigationController?.popViewController(animated: true)
          
