@@ -17,11 +17,10 @@ class MyPlansTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         ref = Database.database().reference()
         let curruser = Auth.auth().currentUser?.uid ?? ""
         let events = self.ref.child("Users/\(curruser)/Rsvp")
-        var refHandle = events.observe(DataEventType.value, with: { (snapshot) in
+        var refHandle = events.observeSingleEvent(of: .value, with: { (snapshot) in
             let eventsRsvpDict = snapshot.value as? [String : AnyObject] ?? [:]
             let eventsRsvpID = eventsRsvpDict.keys
             for eventID in eventsRsvpID {
@@ -47,6 +46,34 @@ class MyPlansTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        ref = Database.database().reference()
+        let curruser = Auth.auth().currentUser?.uid ?? ""
+        let events = self.ref.child("Users/\(curruser)/Rsvp")
+        var refHandle = events.observeSingleEvent(of: .value, with: { (snapshot) in
+            self.myEvents.removeAll()
+            let eventsRsvpDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let eventsRsvpID = eventsRsvpDict.keys
+            if (eventsRsvpID.count == 0) {
+                self.tableView.reloadData()
+            }
+            for eventID in eventsRsvpID {
+                print(eventID)
+                self.ref.child("Events").child(eventID).observeSingleEvent(of: .value, with: { (snapshot) in
+                  // Get user value
+                  let value = snapshot as! DataSnapshot
+                    let event = Event(snapshot: value)!
+                    self.myEvents.append(event)
+                    self.tableView.reloadData()
+                  // ...
+                  }) { (error) in
+                    print(error.localizedDescription)
+                }
+
+            }
+
+        })
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,6 +95,22 @@ class MyPlansTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let event = myEvents[indexPath.row]
+        
+        let detailsViewController = segue.destination as! EventDetailsViewController
+        
+        detailsViewController.event = event
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+    }
+    
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
