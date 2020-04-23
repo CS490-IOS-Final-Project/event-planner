@@ -7,11 +7,38 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class MyPlansTableViewController: UITableViewController {
+    
+    var ref: DatabaseReference!
+    var myEvents = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        let curruser = Auth.auth().currentUser?.uid ?? ""
+        let events = self.ref.child("Users/\(curruser)/Rsvp")
+        var refHandle = events.observe(DataEventType.value, with: { (snapshot) in
+            let eventsRsvpDict = snapshot.value as? [String : AnyObject] ?? [:]
+            let eventsRsvpID = eventsRsvpDict.keys
+            for eventID in eventsRsvpID {
+                self.ref.child("Events").child(eventID).observeSingleEvent(of: .value, with: { (snapshot) in
+                  // Get user value
+                  let value = snapshot as! DataSnapshot
+                    let event = Event(snapshot: value)!
+                    self.myEvents.append(event)
+                    self.tableView.reloadData()
+                  // ...
+                  }) { (error) in
+                    print(error.localizedDescription)
+                }
+                
+            }
+            
+        })
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,14 +49,24 @@ class MyPlansTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.myEvents.count
+    }
+
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
+        let currEvent = self.myEvents[indexPath.row]
+        
+        cell.eventNameField.text = currEvent.eventName
+        cell.eventLocationField.text = currEvent.location
+        cell.eventHostField.text = "Host: \(currEvent.eventHostName ?? "Unknown")"
+        cell.eventDateTimeField.text = currEvent.dateTime
+
+        // Configure the cell...
+
+        return cell
     }
 
     /*
