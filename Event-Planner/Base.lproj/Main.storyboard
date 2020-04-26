@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -345,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDX-Nw-quS" id="hd3-Ww-DGW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161.66667175292969"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-ub-mRz">
@@ -609,9 +609,6 @@
                                             <rect key="frame" x="187" y="190" width="41" height="32"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <state key="normal" title="Edit"/>
-                                            <connections>
-                                                <segue destination="9kr-dc-8e1" kind="show" id="alw-tb-Mcu"/>
-                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -727,6 +724,7 @@
                                         <rect key="frame" x="20" y="368" width="374" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <connections>
+                                            <action selector="addLocation:" destination="9kr-dc-8e1" eventType="touchUpInside" id="MK2-LY-kTS"/>
                                             <action selector="addLocation:" destination="Z6g-xO-e1b" eventType="touchUpInside" id="qgB-5b-6xN"/>
                                         </connections>
                                     </button>
@@ -739,8 +737,7 @@
                                             <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="createEvent:" destination="Z6g-xO-e1b" eventType="touchUpInside" id="o63-vT-B82"/>
-                                            <action selector="editEvent:" destination="9kr-dc-8e1" eventType="touchUpInside" id="95e-zx-bB0"/>
+                                            <action selector="saveEvent:" destination="9kr-dc-8e1" eventType="touchUpInside" id="Dh8-N9-wDc"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -753,10 +750,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="81N-cZ-BPi"/>
                     <connections>
-                        <outlet property="eventDateTime" destination="5ce-Ha-9fG" id="bE3-YD-pNq"/>
-                        <outlet property="eventDescription" destination="BLy-ng-vA2" id="L3u-bk-ibj"/>
-                        <outlet property="eventLocation" destination="56q-wU-Jv3" id="brj-fR-zZd"/>
-                        <outlet property="eventName" destination="jv8-5j-AmT" id="RWc-0V-xYJ"/>
+                        <outlet property="eventDateTime" destination="5ce-Ha-9fG" id="iOg-Tb-x93"/>
+                        <outlet property="eventDescription" destination="BLy-ng-vA2" id="8ri-Hz-CKJ"/>
+                        <outlet property="eventLocation" destination="Vra-kt-cch" id="asS-gn-vCR"/>
+                        <outlet property="eventName" destination="jv8-5j-AmT" id="hId-Y4-6xR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbV-Ge-52i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -776,7 +773,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VRa-yk-57t" id="f5G-v2-7G3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161.66667175292969"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-tp-VF1">
@@ -1040,7 +1037,6 @@
         <image name="square.and.pencil" catalog="system" width="64" height="58"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sH4-Pb-skg"/>
         <segue reference="gLM-5V-pjh"/>
     </inferredMetricsTieBreakers>
 </document>
