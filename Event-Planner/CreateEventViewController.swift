@@ -55,7 +55,7 @@ class CreateEventViewController: UIViewController, GMSAutocompleteViewController
         let userId = Auth.auth().currentUser?.uid ?? ""
         
         let newEvent = self.ref.child("Events").childByAutoId()
-        newEvent.setValue(["EventHostName": userName, "EventHostEmail": userEmail,"EventName": eventName.text!, "Location": locationText.text!, "LocationID": placeId!, "DateTime": strDate])
+        newEvent.setValue(["EventHostName": userName, "EventHostEmail": userEmail,"EventName": eventName.text!, "Location": locationText.text!, "LocationID": placeId!, "DateTime": strDate, "EventDescription": descriptionText.text!])
         
         self.ref.child("Users").child(userId).child("Hosted").child(newEvent.key!).setValue("")
         

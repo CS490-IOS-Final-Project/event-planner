@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -345,7 +345,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDX-Nw-quS" id="hd3-Ww-DGW">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161.66667175292969"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B5p-ub-mRz">
@@ -479,7 +479,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjq-nU-y9l">
-                                <rect key="frame" x="20" y="711" width="374" height="40"/>
+                                <rect key="frame" x="20" y="711" width="374" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="RSVP">
@@ -548,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xu0-xo-K8O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4814" y="-375"/>
+            <point key="canvasLocation" x="4813.04347826087" y="-375"/>
         </scene>
         <!--Hosted Events-->
         <scene sceneID="6d2-Of-GkI">
@@ -557,13 +557,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="lFt-7P-QUX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostedEventTableViewCell" rowHeight="231" id="uFQ-lj-Fhp" userLabel="HostedEventTableViewCell" customClass="HostedEventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="231"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostedEventTableViewCell" id="uFQ-lj-Fhp" userLabel="HostedEventTableViewCell" customClass="HostedEventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="211"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uFQ-lj-Fhp" id="1lC-Vg-2Of">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="231"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="211.33332824707031"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ke-C5-lvO">
@@ -596,33 +596,25 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp6-DT-c8K">
-                                            <rect key="frame" x="20" y="120" width="374" height="50"/>
+                                            <rect key="frame" x="20" y="120" width="374" height="70.333333333333314"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="374" id="J6r-p5-Xj2"/>
-                                                <constraint firstAttribute="height" constant="50" id="lE3-Yw-IG7"/>
+                                                <constraint firstAttribute="height" constant="70" id="lE3-Yw-IG7"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eg8-4K-1ls">
-                                            <rect key="frame" x="187" y="190" width="41" height="32"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <state key="normal" title="Edit"/>
-                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="Zhr-ko-4Lh" secondAttribute="trailing" id="3u2-4a-boy"/>
                                         <constraint firstItem="bp6-DT-c8K" firstAttribute="top" secondItem="Zhr-ko-4Lh" secondAttribute="bottom" constant="15" id="5uV-h9-Zeu"/>
                                         <constraint firstItem="2ke-C5-lvO" firstAttribute="top" secondItem="1lC-Vg-2Of" secondAttribute="topMargin" id="KKu-2C-LV1"/>
                                         <constraint firstItem="nuA-2K-Q79" firstAttribute="trailing" secondItem="1lC-Vg-2Of" secondAttribute="trailingMargin" id="Mu4-ai-zfV"/>
-                                        <constraint firstItem="eg8-4K-1ls" firstAttribute="top" secondItem="bp6-DT-c8K" secondAttribute="bottom" constant="20" id="PJ9-lN-N6f"/>
                                         <constraint firstItem="Zhr-ko-4Lh" firstAttribute="top" secondItem="2ke-C5-lvO" secondAttribute="bottom" constant="10" id="QNm-xZ-4xi"/>
-                                        <constraint firstItem="eg8-4K-1ls" firstAttribute="leading" secondItem="1lC-Vg-2Of" secondAttribute="leadingMargin" constant="167" id="UoT-1W-Hhw"/>
                                         <constraint firstItem="Zhr-ko-4Lh" firstAttribute="leading" secondItem="1lC-Vg-2Of" secondAttribute="leadingMargin" id="euJ-kz-vyF"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="bp6-DT-c8K" secondAttribute="bottom" constant="10" id="ffx-Qw-dUW"/>
                                         <constraint firstItem="bp6-DT-c8K" firstAttribute="leading" secondItem="1lC-Vg-2Of" secondAttribute="leadingMargin" id="ijd-qx-33a"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="eg8-4K-1ls" secondAttribute="trailing" constant="166" id="mmn-zN-edy"/>
-                                        <constraint firstItem="eg8-4K-1ls" firstAttribute="bottom" secondItem="1lC-Vg-2Of" secondAttribute="bottomMargin" constant="2" id="q56-jm-Drq"/>
                                         <constraint firstItem="nuA-2K-Q79" firstAttribute="top" secondItem="1lC-Vg-2Of" secondAttribute="topMargin" id="qGy-5A-psg"/>
                                         <constraint firstItem="2ke-C5-lvO" firstAttribute="leading" secondItem="1lC-Vg-2Of" secondAttribute="leadingMargin" id="trN-m0-o0m"/>
                                     </constraints>
@@ -729,12 +721,12 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4D-Dt-BJL">
-                                        <rect key="frame" x="143" y="780" width="129" height="30"/>
+                                        <rect key="frame" x="20" y="780" width="374" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <state key="normal" title="Save Event">
-                                            <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
                                             <action selector="saveEvent:" destination="9kr-dc-8e1" eventType="touchUpInside" id="Dh8-N9-wDc"/>
@@ -758,7 +750,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbV-Ge-52i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4223" y="1442"/>
+            <point key="canvasLocation" x="4221.739130434783" y="1441.7410714285713"/>
         </scene>
         <!--My Plans-->
         <scene sceneID="lPy-9U-QKR">
@@ -773,7 +765,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VRa-yk-57t" id="f5G-v2-7G3">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="161.66667175292969"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWa-tp-VF1">
