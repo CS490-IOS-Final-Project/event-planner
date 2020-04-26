@@ -21,6 +21,7 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var eventDateTime: UIDatePicker!
     @IBOutlet weak var eventDescription: UITextField!
+    @IBOutlet weak var eventAttendees: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
         eventLocation.text = event.location as String?
         eventName.text = event.eventName as String?
         eventDescription.text = event.description as String?
+        eventAttendees.text = "\(event.attendeeCount ?? 0)"
         
         self.placeId = event.locationId
         
@@ -60,17 +62,15 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
         dateFormatter.timeStyle = DateFormatter.Style.short
         
         let strDate = dateFormatter.string(from: eventDateTime.date)
-        
-        print(self.event.ref?.key)
-        
+                
         let currEvent = self.ref.child("Events").child((self.event.ref?.key)!)
         
         let update = [
             "EventName": eventName.text!,
             "Location": eventLocation.text!,
             "DateTime": strDate,
-            "LocationID": placeId,
-            "EventDescription": eventDescription.text
+            "LocationID": placeId!,
+            "EventDescription": eventDescription.text ?? ""
             ] as [String : Any]
         
         currEvent.updateChildValues(update)
@@ -120,6 +120,8 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
       dismiss(animated: true, completion: nil)
     }
+    
+    
     
     
     

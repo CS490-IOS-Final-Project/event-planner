@@ -17,16 +17,17 @@ class MyPlansTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
         ref = Database.database().reference()
         let curruser = Auth.auth().currentUser?.uid ?? ""
         let events = self.ref.child("Users/\(curruser)/Rsvp")
-        var refHandle = events.observeSingleEvent(of: .value, with: { (snapshot) in
+        events.observeSingleEvent(of: .value, with: { (snapshot) in
             let eventsRsvpDict = snapshot.value as? [String : AnyObject] ?? [:]
             let eventsRsvpID = eventsRsvpDict.keys
             for eventID in eventsRsvpID {
                 self.ref.child("Events").child(eventID).observeSingleEvent(of: .value, with: { (snapshot) in
                   // Get user value
-                  let value = snapshot as! DataSnapshot
+                    let value = snapshot
                     let event = Event(snapshot: value)!
                     self.myEvents.append(event)
                     self.tableView.reloadData()
@@ -88,7 +89,7 @@ class MyPlansTableViewController: UITableViewController {
         
         cell.eventNameField.text = currEvent.eventName
         cell.eventLocationField.text = currEvent.location
-        cell.eventHostField.text = "Host: \(currEvent.eventHostName ?? "Unknown")"
+        cell.eventHostField.text = "Host: \(currEvent.hostname ?? "Unknown")"
         cell.eventDateTimeField.text = currEvent.dateTime
 
         // Configure the cell...

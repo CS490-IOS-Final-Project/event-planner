@@ -13,8 +13,8 @@ import FirebaseDatabase
 class Event {
     let ref: DatabaseReference?
     var dateTime: String?
-    var eventHostName: String?
-    var eventHostEmail: String?
+    var hostname: String?
+    var hostEmail: String?
     var eventName: String?
     var location: String?
     var locationId: String?
@@ -23,8 +23,8 @@ class Event {
     
     init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?, description: String?) {
         self.dateTime = dateTime
-        self.eventHostName = eventHostName
-        self.eventHostEmail = eventHostEmail
+        self.hostname = eventHostName
+        self.hostEmail = eventHostEmail
         self.eventName = eventName
         self.location = location
         self.locationId = locationId
@@ -49,8 +49,8 @@ class Event {
         
         self.ref = snapshot.ref
         self.dateTime = dateTime
-        self.eventHostName = eventHostName
-        self.eventHostEmail = eventHostEmail
+        self.hostname = eventHostName
+        self.hostEmail = eventHostEmail
         self.eventName = eventName
         self.location = location
         self.locationId = locationId
@@ -112,7 +112,7 @@ class EventsTableViewController: UITableViewController {
         
         cell.eventNameField.text = currEvent.eventName
         cell.eventLocationField.text = currEvent.location
-        cell.eventHostField.text = "Host: \(currEvent.eventHostName ?? "Unknown")"
+        cell.eventHostField.text = "Host: \(currEvent.hostname ?? "Unknown")"
         cell.eventDateTimeField.text = currEvent.dateTime
 
         // Configure the cell...

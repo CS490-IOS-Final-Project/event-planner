@@ -17,6 +17,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var eventHostnameLabel: UILabel!
     @IBOutlet weak var eventHostEmailLabel: UILabel!
     @IBOutlet weak var eventNumAttendeesLabel: UILabel!
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
     @IBOutlet weak var rsvpButton: UIButton!
     var currentUserId: String!
     var currentUserEmail: String!
@@ -34,9 +35,10 @@ class EventDetailsViewController: UIViewController {
         self.eventNameLabel.text = event.eventName
         self.eventDateTimeLabel.text = event.dateTime
         self.eventLocationLabel.text = event.location
-        self.eventHostnameLabel.text = event.eventHostName
-        self.eventHostEmailLabel.text = event.eventHostEmail
+        self.eventHostnameLabel.text = event.hostname
+        self.eventHostEmailLabel.text = event.hostEmail
         self.eventNumAttendeesLabel.text = "\(event.attendeeCount ?? 0)"
+        self.eventDescriptionLabel.text = event.description
         
         self.currentUserId = Auth.auth().currentUser?.uid
         self.currentUsername = Auth.auth().currentUser?.displayName

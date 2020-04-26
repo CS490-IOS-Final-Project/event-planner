@@ -107,7 +107,7 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
         
         cell.eventNameField.text = currEvent.eventName
         cell.eventLocationField.text = currEvent.location
-        cell.eventHostField.text = "Host: \(currEvent.eventHostName ?? "Unknown")"
+        cell.eventHostField.text = "Host: \(currEvent.hostname ?? "Unknown")"
         cell.eventDateTimeField.text = currEvent.dateTime
 
         // Configure the cell...
