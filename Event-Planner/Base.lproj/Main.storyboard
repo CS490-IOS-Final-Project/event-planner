@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -342,7 +342,7 @@
                         <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" id="aDX-Nw-quS" customClass="EventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="27" width="414" height="162"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="162"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aDX-Nw-quS" id="hd3-Ww-DGW">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="162"/>
@@ -559,15 +559,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="0.0" id="E8y-WT-rCA">
-                                <rect key="frame" x="0.0" y="28" width="414" height="1.1920928955078125e-07"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E8y-WT-rCA" id="o4e-IQ-m1C">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="1.1920928955078125e-07"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="231" id="uFQ-lj-Fhp" customClass="EventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HostedEventTableViewCell" rowHeight="231" id="uFQ-lj-Fhp" userLabel="HostedEventTableViewCell" customClass="HostedEventTableViewCell" customModule="Event_Planner" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uFQ-lj-Fhp" id="1lC-Vg-2Of">
@@ -637,10 +629,10 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="eventDateTimeField" destination="nuA-2K-Q79" id="DlE-o5-3bs"/>
-                                    <outlet property="eventHostField" destination="bp6-DT-c8K" id="rIJ-JG-EYm"/>
-                                    <outlet property="eventLocationField" destination="Zhr-ko-4Lh" id="cWY-Xc-hRr"/>
-                                    <outlet property="eventNameField" destination="2ke-C5-lvO" id="fsN-cc-mxN"/>
+                                    <outlet property="eventDateTime" destination="nuA-2K-Q79" id="dAI-P8-Wpr"/>
+                                    <outlet property="eventDescription" destination="bp6-DT-c8K" id="hcp-UJ-NOo"/>
+                                    <outlet property="eventLocation" destination="Zhr-ko-4Lh" id="Gpb-2E-t9Y"/>
+                                    <outlet property="eventName" destination="2ke-C5-lvO" id="7Ad-gY-YDD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -667,8 +659,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create New Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-ze-ThG">
-                                        <rect key="frame" x="45" y="111" width="325" height="85"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-ze-ThG">
+                                        <rect key="frame" x="132" y="111" width="152" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="30"/>
                                         <nil key="textColor"/>
@@ -744,6 +736,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createEvent:" destination="Z6g-xO-e1b" eventType="touchUpInside" id="o63-vT-B82"/>
+                                            <action selector="editEvent:" destination="9kr-dc-8e1" eventType="touchUpInside" id="95e-zx-bB0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -755,6 +748,12 @@
                         <viewLayoutGuide key="safeArea" id="8el-VC-CvI"/>
                     </view>
                     <navigationItem key="navigationItem" id="81N-cZ-BPi"/>
+                    <connections>
+                        <outlet property="eventDateTime" destination="5ce-Ha-9fG" id="bE3-YD-pNq"/>
+                        <outlet property="eventDescription" destination="BLy-ng-vA2" id="L3u-bk-ibj"/>
+                        <outlet property="eventLocation" destination="56q-wU-Jv3" id="brj-fR-zZd"/>
+                        <outlet property="eventName" destination="jv8-5j-AmT" id="RWc-0V-xYJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AbV-Ge-52i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

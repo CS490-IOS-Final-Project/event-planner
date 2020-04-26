@@ -19,6 +19,7 @@ class Event {
     var location: String?
     var locationId: String?
     var attendeeCount: UInt?
+    var description: String?
     
     init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?) {
         self.dateTime = dateTime
@@ -40,7 +41,7 @@ class Event {
             let eventName = value["EventName"] as? String,
             let location = value["Location"] as? String,
             let locationId = value["LocationID"] as? String
-        else {
+        else  {
             return nil
         }
         

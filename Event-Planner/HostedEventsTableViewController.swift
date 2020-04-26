@@ -7,11 +7,34 @@
 //
 
 import UIKit
+import Firebase
+
 
 class HostedEventsTableViewController: UITableViewController {
+    var ref: DatabaseReference!
+    var myEvents = [Event]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.tableFooterView = UIView()
+        ref = Database.database().reference()
+        let username = Auth.auth().currentUser?.displayName ?? ""
+        let events = self.ref.child("Events")
+        
+        events.queryOrdered(byChild: "EventHostName").queryEqual(toValue: username).observe(.value, with: {snapshot in
+            
+            var newEvents: [Event] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot,
+                    let newEvent = Event(snapshot:snapshot){
+                    newEvents.append(newEvent)
+                }
+            }
+            print(newEvents)
+            self.myEvents = newEvents
+            self.tableView.reloadData()
+        })
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -22,25 +45,33 @@ class HostedEventsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return myEvents.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HostedEventTableViewCell", for: indexPath) as! HostedEventTableViewCell
+        
+        let currEvent = myEvents[indexPath.row]
+        
+        cell.eventName.text = currEvent.eventName as String?
+        cell.eventLocation.text = currEvent.location
+        cell.eventDateTime.text = currEvent.dateTime
+        cell.eventDescription.text = "This is a filler description!"
+        
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -77,14 +108,22 @@ class HostedEventsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        // Get the new view controller using segue.destination.
+//        // Pass the selected object to the new view controller.
+//        let cell = sender as! UITableViewCell
+//        let indexPath = tableView.indexPath(for: cell)!
+//        let event = myEvents[indexPath.row]
+//
+//        let detailsViewController = segue.destination as! EditEventViewController
+//
+//        detailsViewController.event = event
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+    
 
 }
