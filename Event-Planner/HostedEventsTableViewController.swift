@@ -66,7 +66,7 @@ class HostedEventsTableViewController: UITableViewController {
         cell.eventName.text = currEvent.eventName as String?
         cell.eventLocation.text = currEvent.location
         cell.eventDateTime.text = currEvent.dateTime
-        cell.eventDescription.text = "This is a filler description!"
+        cell.eventDescription.text = currEvent.description
         
         // Configure the cell...
 

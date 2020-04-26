@@ -21,7 +21,7 @@ class Event {
     var attendeeCount: UInt?
     var description: String?
     
-    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?) {
+    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?, description: String?) {
         self.dateTime = dateTime
         self.eventHostName = eventHostName
         self.eventHostEmail = eventHostEmail
@@ -30,6 +30,7 @@ class Event {
         self.locationId = locationId
         self.ref = ref
         self.attendeeCount = attendeeCount
+        self.description = description
     }
     
     init?(snapshot: DataSnapshot) {
@@ -40,7 +41,8 @@ class Event {
             let eventHostEmail = value["EventHostEmail"] as? String,
             let eventName = value["EventName"] as? String,
             let location = value["Location"] as? String,
-            let locationId = value["LocationID"] as? String
+            let locationId = value["LocationID"] as? String,
+            let description = value["EventDescription"] as? String
         else  {
             return nil
         }
@@ -52,6 +54,7 @@ class Event {
         self.eventName = eventName
         self.location = location
         self.locationId = locationId
+        self.description = description
                 
         self.ref?.child("Rsvp").observeSingleEvent(of: .value, with: { (snapshot) in
             self.attendeeCount = snapshot.childrenCount

@@ -16,7 +16,6 @@
 		6B6803A22439529600540562 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B6803A02439529600540562 /* LaunchScreen.storyboard */; };
 		6B6803AD2439529600540562 /* Event_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6803AC2439529600540562 /* Event_PlannerTests.swift */; };
 		6B6803B82439529600540562 /* Event_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6803B72439529600540562 /* Event_PlannerUITests.swift */; };
-		6B71C09F2456194A000C8218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B71C09E2456194A000C8218 /* GoogleService-Info.plist */; };
 		6B9D6AF324423ABB00438CBE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF224423ABB00438CBE /* HomeViewController.swift */; };
 		6B9D6AF5244295B600438CBE /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF4244295B600438CBE /* CreateEventViewController.swift */; };
 		6B9D6AF72442B5AD00438CBE /* MenuChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF62442B5AD00438CBE /* MenuChoiceView.swift */; };
@@ -28,6 +27,7 @@
 		A0C27CC4244BFF1700CA3A51 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C27CC3244BFF1700CA3A51 /* EditEventViewController.swift */; };
 		AB488DCA05AA6B32FA4C1669 /* Pods_Event_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9140EE9A740DA7161178D39B /* Pods_Event_Planner.framework */; };
 		DA60C60424552A55000D2395 /* HostedEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA60C60324552A55000D2395 /* HostedEventTableViewCell.swift */; };
+		DAB94E6724564EE1006FD415 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DAB94E6624564EE1006FD415 /* GoogleService-Info.plist */; };
 		DAC7905C244408140087451E /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAC7905B244408140087451E /* EventTableViewCell.swift */; };
 		E3167E6086EEFF1D4162CA30 /* Pods_Event_Planner_Event_PlannerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428A3B7C9E8ACFBA4DE135B4 /* Pods_Event_Planner_Event_PlannerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -67,7 +67,6 @@
 		6B6803B32439529600540562 /* Event-PlannerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Event-PlannerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6803B72439529600540562 /* Event_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_PlannerUITests.swift; sourceTree = "<group>"; };
 		6B6803B92439529600540562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6B71C09E2456194A000C8218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6B9D6AF224423ABB00438CBE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6B9D6AF4244295B600438CBE /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6B9D6AF62442B5AD00438CBE /* MenuChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuChoiceView.swift; sourceTree = "<group>"; };
@@ -81,6 +80,7 @@
 		9140EE9A740DA7161178D39B /* Pods_Event_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0C27CC3244BFF1700CA3A51 /* EditEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
 		DA60C60324552A55000D2395 /* HostedEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostedEventTableViewCell.swift; sourceTree = "<group>"; };
+		DAB94E6624564EE1006FD415 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAC7905B244408140087451E /* EventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		EE7278A276B64760B2065090 /* Pods_Event_PlannerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Event_PlannerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51EDA2D472C7597DFB4EB1D /* Pods-Event-Planner-Event-PlannerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; path = "Target Support Files/Pods-Event-Planner-Event-PlannerUITests/Pods-Event-Planner-Event-PlannerUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 				6B68039E2439529600540562 /* Assets.xcassets */,
 				6B6803A02439529600540562 /* LaunchScreen.storyboard */,
 				6B6803A32439529600540562 /* Info.plist */,
-				6B71C09E2456194A000C8218 /* GoogleService-Info.plist */,
+				DAB94E6624564EE1006FD415 /* GoogleService-Info.plist */,
 				6B337069243A8C32002BB2BA /* LoginViewController.swift */,
 				6B9D6AF224423ABB00438CBE /* HomeViewController.swift */,
 				6B9D6AF4244295B600438CBE /* CreateEventViewController.swift */,
@@ -316,7 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B6803A22439529600540562 /* LaunchScreen.storyboard in Resources */,
-				6B71C09F2456194A000C8218 /* GoogleService-Info.plist in Resources */,
+				DAB94E6724564EE1006FD415 /* GoogleService-Info.plist in Resources */,
 				6B68039F2439529600540562 /* Assets.xcassets in Resources */,
 				6B68039D2439529500540562 /* Main.storyboard in Resources */,
 			);

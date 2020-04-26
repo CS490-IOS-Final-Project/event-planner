@@ -31,7 +31,7 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
         
         eventLocation.text = event.location as String?
         eventName.text = event.eventName as String?
-        eventDescription.text = "This is a filler description!" as String?
+        eventDescription.text = event.description as String?
         
         self.placeId = event.locationId
         
@@ -69,8 +69,9 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
             "EventName": eventName.text!,
             "Location": eventLocation.text!,
             "DateTime": strDate,
-            "LocationID": placeId
-        ]
+            "LocationID": placeId,
+            "EventDescription": eventDescription.text
+            ] as [String : Any]
         
         currEvent.updateChildValues(update)
         
