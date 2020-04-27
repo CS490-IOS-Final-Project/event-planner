@@ -34,8 +34,8 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 * ~~A user should be able navigate to different screens~~
 * ~~A user can RSVP to an event~~
 * ~~A user can view events by location~~
-* A user can view all events you have RSVPd to
-* A user should be notified before the event
+* ~~A user can view all events you have RSVPd to~~
+* ~~A user can view events they have hosted~~
 
 ### 2. Screen Archetypes
 
