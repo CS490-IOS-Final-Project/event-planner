@@ -65,7 +65,7 @@ class EventDetailsViewController: UIViewController {
                 let eventId = self.event.ref!.key!
                 
                 // Add user RSVP to Event's info
-                self.ref.child("Events").child(eventId).child("Rsvp").child(self.currentUserId).setValue("\(self.currentUsername ?? "") \(self.currentUserEmail ?? "")")
+                self.ref.child("Events").child(eventId).child("Rsvp").child(self.currentUserId).setValue("\(self.currentUserEmail ?? "") \(self.currentUsername ?? "")")
                 
                 // Add event RSVP to User's info
                 self.ref.child("Users").child(self.currentUserId).child("Rsvp").child(eventId).setValue("")

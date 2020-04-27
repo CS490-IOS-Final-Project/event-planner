@@ -39,6 +39,12 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
         
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let attendeeesTableViewController = segue.destination as! AttendeesTableViewController
+        
+        attendeeesTableViewController.eventId = event.eventId
+    }
+    
     @IBAction func saveEvent(_ sender: UIButton!) {
       
         if (eventName.text == nil || eventName.text!.isEmpty) {
@@ -120,7 +126,6 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
       dismiss(animated: true, completion: nil)
     }
-    
     
     
     

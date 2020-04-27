@@ -20,8 +20,9 @@ class Event {
     var locationId: String?
     var attendeeCount: UInt?
     var description: String?
+    var eventId: String
     
-    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?, description: String?) {
+    init (ref: DatabaseReference?, dateTime: String?, eventHostName: String?,  eventHostEmail: String?, eventName: String?, location: String?, locationId: String?, attendeeCount: UInt?, description: String?, eventId: String) {
         self.dateTime = dateTime
         self.hostname = eventHostName
         self.hostEmail = eventHostEmail
@@ -31,6 +32,7 @@ class Event {
         self.ref = ref
         self.attendeeCount = attendeeCount
         self.description = description
+        self.eventId = eventId
     }
     
     init?(snapshot: DataSnapshot) {
@@ -55,6 +57,7 @@ class Event {
         self.location = location
         self.locationId = locationId
         self.description = description
+        self.eventId = snapshot.key
                 
         self.ref?.child("Rsvp").observeSingleEvent(of: .value, with: { (snapshot) in
             self.attendeeCount = snapshot.childrenCount
@@ -91,7 +94,6 @@ class EventsTableViewController: UITableViewController {
                 }
             }
             
-            print(newEvents)
             self.myEvents = newEvents
             self.tableView.reloadData()
         })
@@ -102,13 +104,13 @@ class EventsTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myEvents.count
+        return self.myEvents.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventTableViewCell", for: indexPath) as! EventTableViewCell
-        let currEvent = myEvents[indexPath.row]
+        let currEvent = self.myEvents[indexPath.row]
         
         cell.eventNameField.text = currEvent.eventName
         cell.eventLocationField.text = currEvent.location

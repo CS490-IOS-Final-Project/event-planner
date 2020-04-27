@@ -17,6 +17,8 @@
 		6B6803AD2439529600540562 /* Event_PlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6803AC2439529600540562 /* Event_PlannerTests.swift */; };
 		6B6803B82439529600540562 /* Event_PlannerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6803B72439529600540562 /* Event_PlannerUITests.swift */; };
 		6B71C0A124565159000C8218 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6B71C0A024565159000C8218 /* GoogleService-Info.plist */; };
+		6B71C0A324565ED1000C8218 /* AttendeesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71C0A224565ED1000C8218 /* AttendeesTableViewController.swift */; };
+		6B71C0A5245662BE000C8218 /* AttendeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B71C0A4245662BE000C8218 /* AttendeeTableViewCell.swift */; };
 		6B9D6AF324423ABB00438CBE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF224423ABB00438CBE /* HomeViewController.swift */; };
 		6B9D6AF5244295B600438CBE /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF4244295B600438CBE /* CreateEventViewController.swift */; };
 		6B9D6AF72442B5AD00438CBE /* MenuChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9D6AF62442B5AD00438CBE /* MenuChoiceView.swift */; };
@@ -68,6 +70,8 @@
 		6B6803B72439529600540562 /* Event_PlannerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event_PlannerUITests.swift; sourceTree = "<group>"; };
 		6B6803B92439529600540562 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B71C0A024565159000C8218 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6B71C0A224565ED1000C8218 /* AttendeesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesTableViewController.swift; sourceTree = "<group>"; };
+		6B71C0A4245662BE000C8218 /* AttendeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeTableViewCell.swift; sourceTree = "<group>"; };
 		6B9D6AF224423ABB00438CBE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6B9D6AF4244295B600438CBE /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
 		6B9D6AF62442B5AD00438CBE /* MenuChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuChoiceView.swift; sourceTree = "<group>"; };
@@ -182,6 +186,8 @@
 				6B9D6AF82442C0DF00438CBE /* EventsTableViewController.swift */,
 				6B9D6AFE2442C14900438CBE /* HostedEventsTableViewController.swift */,
 				DA60C60324552A55000D2395 /* HostedEventTableViewCell.swift */,
+				6B71C0A224565ED1000C8218 /* AttendeesTableViewController.swift */,
+				6B71C0A4245662BE000C8218 /* AttendeeTableViewCell.swift */,
 			);
 			path = "Event-Planner";
 			sourceTree = "<group>";
@@ -483,10 +489,12 @@
 				6B9D6AF324423ABB00438CBE /* HomeViewController.swift in Sources */,
 				DAC7905C244408140087451E /* EventTableViewCell.swift in Sources */,
 				6BE1988B244CE79D00C7EC7E /* EventDetailsViewController.swift in Sources */,
+				6B71C0A5245662BE000C8218 /* AttendeeTableViewCell.swift in Sources */,
 				6B9D6AF92442C0DF00438CBE /* EventsTableViewController.swift in Sources */,
 				A0C27CC4244BFF1700CA3A51 /* EditEventViewController.swift in Sources */,
 				DA60C60424552A55000D2395 /* HostedEventTableViewCell.swift in Sources */,
 				6B33706A243A8C32002BB2BA /* LoginViewController.swift in Sources */,
+				6B71C0A324565ED1000C8218 /* AttendeesTableViewController.swift in Sources */,
 				6B9D6AF72442B5AD00438CBE /* MenuChoiceView.swift in Sources */,
 				6B9D6AF5244295B600438CBE /* CreateEventViewController.swift in Sources */,
 				6BE1988D244D33E900C7EC7E /* LocationSearchViewController.swift in Sources */,
