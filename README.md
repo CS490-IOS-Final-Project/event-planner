@@ -160,3 +160,10 @@ Created Digital Wireframe
 
 <img src="http://g.recordit.co/yk3bpO1roC.gif" width=300>
 
+
+## Sprint 4
+- A user can view all events they have RSVP'd to
+- A user, can view all events they have hosted
+
+<img src="http://g.recordit.co/oWlQ9mmxH2.gif" width=300>
+
