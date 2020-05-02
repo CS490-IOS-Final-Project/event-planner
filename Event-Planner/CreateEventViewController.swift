@@ -122,5 +122,10 @@ class CreateEventViewController: UIViewController, GMSAutocompleteViewController
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {
       dismiss(animated: true, completion: nil)
     }
-
+    
+    
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
+    
 }

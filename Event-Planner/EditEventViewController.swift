@@ -141,6 +141,9 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
     }
     
     
+    @IBAction func onTap(_ sender: Any) {
+        view.endEditing(true)
+    }
     
     
     /*
