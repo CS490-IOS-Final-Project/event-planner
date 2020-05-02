@@ -42,7 +42,7 @@ class LocationSearchViewController: UIViewController, GMSAutocompleteViewControl
         }
         
         let allEvents = self.ref.child("Events")
-        allEvents.queryOrdered(byChild: "EventName").observeSingleEvent(of: .value, with: {snapshot in
+        allEvents.queryOrdered(byChild: "DateTime").observeSingleEvent(of: .value, with: {snapshot in
             self.events.removeAll(keepingCapacity: true)
             self.tabView.reloadData()
             for child in snapshot.children {

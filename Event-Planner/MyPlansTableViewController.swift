@@ -21,6 +21,11 @@ class MyPlansTableViewController: UITableViewController {
         ref = Database.database().reference()
         let curruser = Auth.auth().currentUser?.uid ?? ""
         let events = self.ref.child("Users/\(curruser)/Rsvp")
+        let dateFormatter = DateFormatter()
+
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeStyle = DateFormatter.Style.short
+        
         events.observeSingleEvent(of: .value, with: { (snapshot) in
             let eventsRsvpDict = snapshot.value as? [String : AnyObject] ?? [:]
             let eventsRsvpID = eventsRsvpDict.keys
@@ -30,6 +35,9 @@ class MyPlansTableViewController: UITableViewController {
                     let value = snapshot
                     let event = Event(snapshot: value)!
                     self.myEvents.append(event)
+                    self.myEvents.sort { (e1, e2) -> Bool in
+                        return dateFormatter.date(from: e1.dateTime!)?.compare(dateFormatter.date(from: e2.dateTime!)!) == ComparisonResult.orderedAscending
+                    }
                     self.tableView.reloadData()
                   // ...
                   }) { (error) in

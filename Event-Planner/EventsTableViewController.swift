@@ -94,7 +94,14 @@ class EventsTableViewController: UITableViewController {
                 }
             }
             
-            self.myEvents = newEvents
+            let dateFormatter = DateFormatter()
+
+            dateFormatter.dateStyle = DateFormatter.Style.short
+            dateFormatter.timeStyle = DateFormatter.Style.short
+            
+            self.myEvents = newEvents.sorted(by: { (e1, e2) -> Bool in
+                return dateFormatter.date(from: e1.dateTime!)?.compare(dateFormatter.date(from: e2.dateTime!)!) == ComparisonResult.orderedAscending
+            })
             self.tableView.reloadData()
         })
     }
