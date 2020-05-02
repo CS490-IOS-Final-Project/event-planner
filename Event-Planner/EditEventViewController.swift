@@ -46,19 +46,32 @@ class EditEventViewController: UIViewController, GMSAutocompleteViewControllerDe
     }
     
     @IBAction func saveEvent(_ sender: UIButton!) {
-      
+        var emptyMessage = "The following fields are empty:\n"
+        var hasEmptyFields = false
+        
         if (eventName.text == nil || eventName.text!.isEmpty) {
-            print("empty event name")
-            return
+            emptyMessage += "Event Name\n"
+            hasEmptyFields = true
         }
         
         if (eventLocation.text == nil || eventLocation.text!.isEmpty) {
-            print("empty location")
-            return
+            emptyMessage += "Event Location\n"
+            hasEmptyFields = true
         }
         
         if (eventDescription.text == nil || eventDescription.text!.isEmpty) {
-            print("empty description")
+            emptyMessage += "Event Description\n"
+            hasEmptyFields = true
+        }
+        
+        if (hasEmptyFields) {
+            let dialogMessage = UIAlertController(title: "Empty Fields", message: emptyMessage, preferredStyle: .alert)
+            
+            let ok = UIAlertAction(title: "Ok", style: .default, handler: nil)
+            
+            dialogMessage.addAction(ok)
+            
+            self.present(dialogMessage, animated: true, completion: nil)
             return
         }
         
