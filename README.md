@@ -34,8 +34,8 @@ Hosting an event or party requires a lot of effort, thinking and coordination an
 * ~~A user should be able navigate to different screens~~
 * ~~A user can RSVP to an event~~
 * ~~A user can view events by location~~
-* A user can view all events you have RSVPd to
-* A user should be notified before the event
+* ~~A user can view all events you have RSVPd to~~
+* ~~A user can view events they have hosted~~
 
 ### 2. Screen Archetypes
 
@@ -159,4 +159,11 @@ Created Digital Wireframe
 - A user should have the ability to search for events within 10 KM radius of a specified location
 
 <img src="http://g.recordit.co/yk3bpO1roC.gif" width=300>
+
+
+## Sprint 4
+- A user can view all events they have RSVP'd to
+- A user, can view all events they have hosted
+
+<img src="http://g.recordit.co/oWlQ9mmxH2.gif" width=300>
 
